@@ -7,6 +7,8 @@ Deno.serve((req) => {
             status: status,
             headers: {
                 "content-type": "application/json; charset=utf-8",
+                "Access-Control-Allow-Origin": "*", // Allow all origins
+                "Access-Control-Allow-Headers": "Content-Type", 
             },
         };
     }
