@@ -1,4 +1,5 @@
 import { data } from "./data.js";
+import { photos } from "./photos.js";
 
 Deno.serve((req) => {
     
@@ -28,6 +29,9 @@ Deno.serve((req) => {
 
         case pathname === "/todos":
            return new Response(JSON.stringify(data), setStatus());
+
+        case pathname === "/photos":
+            return new Response(JSON.stringify(photos), setStatus());
 
         case pathname.startsWith("/todos/"): {
             const id = pathname.split("/")[2];
